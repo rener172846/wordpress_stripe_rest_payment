@@ -110,11 +110,9 @@ class Endpoint_StripePayment {
       } catch (Throwable $t) {
          // Executed only in PHP 7, will not match in PHP 5
         WC_Stripe_Logger::log( 'Error: ' . $t->getMessage() );
-        print_r("Throwable");
       } catch ( Exception $e ) {
         // Executed only in PHP 5, will not be reached in PHP 7
         WC_Stripe_Logger::log( 'Error: ' . $e->getMessage() );
-        print_r("Exception");
       }
     }
 
@@ -123,8 +121,6 @@ class Endpoint_StripePayment {
         'email' => $user->data->user_email,
         'name' => $user->data->display_name,
       ]);
-      print("new customer");
-      print_r($customer);
       $customerId = $customer["id"];
       update_user_meta($userId, 'stripe_customer_id', $customerId);
     }
@@ -183,11 +179,9 @@ class Endpoint_StripePayment {
       } catch (Throwable $t) {
          // Executed only in PHP 7, will not match in PHP 5
         WC_Stripe_Logger::log( 'Error: ' . $t->getMessage() );
-        print_r("Throwable");
       } catch ( Exception $e ) {
         // Executed only in PHP 5, will not be reached in PHP 7
         WC_Stripe_Logger::log( 'Error: ' . $e->getMessage() );
-        print_r("Exception");
       }
     }
 
@@ -196,8 +190,6 @@ class Endpoint_StripePayment {
         'email' => $user->data->user_email,
         'name' => $user->data->display_name,
       ]);
-      print("new customer");
-      print_r($customer);
       $customerId = $customer["id"];
       update_user_meta($userId, 'stripe_customer_id', $customerId);
     }
@@ -269,11 +261,9 @@ class Endpoint_StripePayment {
       } catch (Throwable $t) {
          // Executed only in PHP 7, will not match in PHP 5
         WC_Stripe_Logger::log( 'Error: ' . $t->getMessage() );
-        print_r("Throwable");
       } catch ( Exception $e ) {
         // Executed only in PHP 5, will not be reached in PHP 7
         WC_Stripe_Logger::log( 'Error: ' . $e->getMessage() );
-        print_r("Exception");
       }
     }
 
@@ -282,8 +272,6 @@ class Endpoint_StripePayment {
         'email' => $user->data->user_email,
         'name' => $user->data->display_name,
       ]);
-      print("new customer");
-      print_r($customer);
       $customerId = $customer["id"];
       update_user_meta($userId, 'stripe_customer_id', $customerId);
     }
@@ -294,8 +282,6 @@ class Endpoint_StripePayment {
 
     $wc_gateway_stripe = new WC_Gateway_Stripe();
     $_POST['stripe_token'] = $tokenId;
-
-    // return print_r($paymentIntent);
 
     $payment_result = $wc_gateway_stripe->process_payment( $orderId );
     
