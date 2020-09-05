@@ -1,0 +1,8 @@
+{
+    "config": {
+        "vendor-dir": "includes/vendor"
+    },
+    "require": {
+        "stripe/stripe-php": "^7.50"
+    }
+}
